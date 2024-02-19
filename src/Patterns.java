@@ -2,13 +2,16 @@ public class Patterns {
 
     //Box Print
     public static void main(String[] args) {
-        //pattern1();
-        //pattern2();
-        //pattern3();
-        //pattern4();
-        //pattern5();
-        //pattern6();
-        pattern7();
+        Patterns p= new Patterns();
+//        pattern1();
+//        System.out.println();
+//        pattern2();
+//        System.out.println();
+//        pattern3();
+//        pattern4();
+//        pattern5();
+//        pattern6();
+//        pattern7();
 
     }
 
@@ -88,7 +91,7 @@ public class Patterns {
         }
     }
     public static void pattern3() {
-        int size = 15;
+        int size = 5;
 
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < row; col++) {

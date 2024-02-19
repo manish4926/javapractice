@@ -1,3 +1,4 @@
+import Recurssion.*;
 public class Recursion {
 
     static int n2;
@@ -6,7 +7,9 @@ public class Recursion {
     static int n1 = 1;
     public static void main(String[] args) {
         //Fabonnici
-        fabonnici();
+        //fabonnici();
+        //Recurssion.program1.p1();
+        Recurssion.program1.p3();
     }
 
     public static void fabonnici() {
