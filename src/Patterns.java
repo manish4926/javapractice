@@ -2,7 +2,7 @@ public class Patterns {
 
     //Box Print
     public static void main(String[] args) {
-        Patterns p= new Patterns();
+
 //        pattern1();
 //        System.out.println();
 //        pattern2();
@@ -12,7 +12,76 @@ public class Patterns {
 //        pattern5();
 //        pattern6();
 //        pattern7();
+        Patterns p= new Patterns();
+        //p.pattern8();
+        p.pattern8();
 
+    }
+
+    void pattern8() {
+        int maxtrixSize = 10;
+        int[][] matrix = new int[maxtrixSize][maxtrixSize];
+        int fullMatrixSize = maxtrixSize * maxtrixSize;
+        String direction = "right";
+        int singleIteration  = maxtrixSize-1;
+        int x = 0;
+        int y = 0;
+        int val = 1;
+
+        for (int i = 0; i < fullMatrixSize; i++) {
+
+            matrix[x][y] = val;
+
+            switch (direction) {
+                case "right":
+                    // move to y with x = 0
+                    if(y == singleIteration) {
+                        direction = "down";
+                        x++;
+                    } else {
+                        y++;
+                    }
+                    break;
+
+                case "down":
+                    // move to x with y = 0
+                    if(x == singleIteration) {
+                        direction = "left";
+                        y--;
+                    } else {
+                        x++;
+                    }
+                    break;
+                case "left":
+                    // move left to y with x same value
+                    if(y == maxtrixSize - singleIteration - 1) {
+                        direction = "up";
+                        x--;
+                    } else {
+                        y--;
+                    }
+                    break;
+                case "up":
+                    // move left to y with x same value
+                    if(x == maxtrixSize - singleIteration) {
+                        direction = "right";
+                        y++;
+                        singleIteration--;
+                    } else {
+                        x--;
+                    }
+                    break;
+            }
+            val++;
+
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void pattern7() {
