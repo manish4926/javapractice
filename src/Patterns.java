@@ -14,11 +14,104 @@ public class Patterns {
 //        pattern7();
         Patterns p= new Patterns();
         //p.pattern8();
-        p.pattern8();
+        //p.pattern8();
+        //p.pattern9();
+        //p.pattern10();
+        //p.pattern11();
+        p.pattern12();
+
+
+    }
+
+    void pattern12() {
+        //https://static.javatpoint.com/corebasic/programs/images/java-program-to-print-the-following-pattern-4.png
+        int size = 6;
+        int val = 1;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(i==j || i+j == size-1) {
+
+                    System.out.print(val);
+                } else {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+            if(i <= size/2 -1) {
+                val++;
+            } else {
+                val--;
+            }
+        }
+    }
+
+    void pattern11() {
+//        1
+//        2 4
+//        3 6 9
+//        4 8 12 16
+//        5 10 15 20 25
+//        6 12 18 24 30 36
+//        7 14 21 28 35 42 49
+//        8 16 24 32 40 48 56 64
+//        9 18 27 36 45 54 63 72 81
+//        10 20 30 40 50 60 70 80 90 100
+        int size = 10;
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i*j+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern10() {
+//        *000*000*
+//        0*00*00*0
+//        00*0*0*00
+//        000***000
+
+
+        int cols = 9;
+        int rows = 4;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if(i == j || j == cols-i-1 || j == (cols/2)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print("0");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern9() {
+//        5432*
+//        543*1
+//        54*21
+//        5*321
+//        *4321
+
+        int totalVal = 5;
+        for (int i = 0; i < totalVal; i++) {
+            for (int j = totalVal; j > 0; j--) {
+                if(i == j-1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(j);
+                }
+
+            }
+            System.out.println();
+
+        }
 
     }
 
     void pattern8() {
+
         int maxtrixSize = 10;
         int[][] matrix = new int[maxtrixSize][maxtrixSize];
         int fullMatrixSize = maxtrixSize * maxtrixSize;
