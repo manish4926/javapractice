@@ -18,14 +18,87 @@ public class Patterns {
         //p.pattern9();
         //p.pattern10();
         //p.pattern11();
-        p.pattern12();
+        //p.pattern12();
+        //p.pattern13();
+        p.pattern14();
+
 
 
     }
 
+    void pattern14() {
+        System.out.println("not decided");
+    }
+
+    void pattern13() {
+        int size = 5;
+        int val = 1;
+        int[][] matrix = new int[5][5];
+        int totalMatrixSize = size*size;
+        int iteration = size-1;
+        String direction = "right";
+        int x = 0;
+        int y = 0;
+        for (int i = 0; i < totalMatrixSize; i++) {
+            switch (direction) {
+                case "right":
+                    matrix[x][y] = val;
+                    if(y == iteration) {
+                        direction = "down";
+                        x++;
+                    } else {
+
+                        y++;
+                    }
+                    break;
+                case "down":
+                    matrix[x][y] = val;
+                    if(x == iteration) {
+                        direction = "left";
+                        y--;
+                    } else {
+                        x++;
+                    }
+                    break;
+                case "left":
+                    matrix[x][y] = val;
+                    if(y == 0) {
+                        direction = "up";
+                        x--;
+                    } else {
+
+                        y--;
+                    }
+                    break;
+                case "up":
+                    matrix[x][y] = val;
+                    if(x == size-iteration) {
+                        direction = "none";
+                        y++;
+                    } else {
+                        x--;
+                    }
+                    break;
+            }
+            val++;
+        }
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(matrix[i][j] != 0) {
+                    System.out.print(matrix[i][j]);
+                } else {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
     void pattern12() {
         //https://static.javatpoint.com/corebasic/programs/images/java-program-to-print-the-following-pattern-4.png
-        int size = 6;
+        int size = 7;
         int val = 1;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
