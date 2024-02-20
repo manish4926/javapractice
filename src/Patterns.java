@@ -27,6 +27,8 @@ public class Patterns {
     }
 
     void pattern14() {
+        int size = 4;
+        
         System.out.println("not decided");
     }
 
