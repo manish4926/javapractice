@@ -27,9 +27,25 @@ public class Patterns {
     }
 
     void pattern14() {
-        int size = 4;
-        
-        System.out.println("not decided");
+        int size = 5;
+        for (int i = 0; i < size-1; i++) {
+            for (int j = 1; j <= size; j++) {
+                if(j >= size-i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(j);
+                }
+
+            }
+            for (int j = size; j >= 1; j--) {
+                if(j >= size-i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(j);
+                }
+            }
+            System.out.println();
+        }
     }
 
     void pattern13() {
