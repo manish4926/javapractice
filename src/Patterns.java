@@ -20,10 +20,83 @@ public class Patterns {
         //p.pattern11();
         //p.pattern12();
         //p.pattern13();
-        p.pattern14();
+        //p.pattern14();
+        //p.pattern15();
+        //p.pattern16();
+        p.pattern17();
 
 
 
+
+    }
+
+    void pattern17() {
+        //https://static.javatpoint.com/corebasic/programs/images/java-program-to-print-the-following-pattern-on-the-console-8.png
+        int count = 6;
+        int x =1;
+        for (int i = 0  ; i < count; i++) {
+            for (int j = 1; j < count-i ; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j <= i; j++) {
+                if(i == 0 || j == 0) {
+                    x =1;
+                } else {
+                    x = x * (i-j+1)/j;
+
+                }
+                System.out.printf("%4d",x);
+
+            }
+            System.out.println();
+        }
+    }
+
+    void pattern16() {
+//        A
+//        B B
+//        C C C
+//        D D D D
+//        E E E E E
+        int count = 5;
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < count; j++) {
+                if(j <= i) {
+                    System.out.print((char)(65+i) + " ");
+                }
+
+            }
+            System.out.println();
+
+        }
+    }
+
+    void pattern15() {
+//        0
+//        909
+//        89098
+//        7890987
+//        678909876
+//        56789098765
+//        4567890987654
+//        345678909876543
+//        23456789098765432
+//        1234567890987654321
+        int size  = 10;
+        for (int i = 1; i <= size; i++) {
+            for (int j = 0; j < size; j++) {
+                if(j > size-i ) {
+                    System.out.print(j);
+                }
+            }
+            System.out.print("0");
+            for (int j = 0; j < size; j++) {
+                if(j > size-i ) {
+                    System.out.print(j);
+                }
+            }
+            System.out.println();
+        }
     }
 
     void pattern14() {
