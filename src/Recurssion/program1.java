@@ -11,13 +11,49 @@ public class program1 {
 //
 //    }
 
+    public static void p4Recursive(int n, int fact) {
+        if(n == 0 || n ==1) {
+            System.out.println(fact);
+            return;
+        }
+        fact *= n;
+        p4Recursive(n-1, fact);
+
+    }
+
+    public static void p4() {
+        //Factorial of a number
+        //fact n = n * (n-1)_* (n-2) *---1
+        int n = 5;
+        int fact = 1;
+        p4Recursive(n, fact);
+    }
+
+    public static int p3_2Recursive(int i, int n, int sum) {
+        if(i == n) {
+            return sum+n;
+        }
+        sum += i;
+        return p3_2Recursive(i+1, n, sum);
+
+        //return sum;
+    }
+
+    public static void p3_2() {
+        int n = 10;
+        int i = 0;
+        int sum = 0;
+        int result = p3_2Recursive(i, n, sum);
+        System.out.println(result);
+    }
+
     public static int p3Recursive(int n, int sum) {
         if(n==0) {
-            return sum;
+            return 0;
         }
-        sum = sum + n;
-        System.out.println(sum);
-        p3Recursive(n-1, sum);
+        sum = p3Recursive(n-1, sum);
+        sum += n;
+
         return sum;
     }
 
@@ -32,22 +68,28 @@ public class program1 {
 
     }
 
-    public static int p2Recursive(int n) {
-        if(n == 0) {
-            return 0;
+    public static void p2Recursive(int n1, int n2, int n, int sum) {
+        if(n == n2) {
+            System.out.print(sum+" ");
+            return;
         }
-
-        int r = p2Recursive(n-1);
-        int x = n + r;
-        System.out.println("n is " +n + " and x is "+x);
-        return x;
+        System.out.println(n1+ "--"+n2);
+        sum  = n1 + n2;
+        System.out.print(sum+" ");
+        p2Recursive(n2, sum, n, sum);
     }
 
     public static void p2() {
-        //Fabbonicci Series
+        //Fabbonacci Series
         //0 1 1 2 3 5 8 13 21 34 55
         int n = 10;
-        p2Recursive(n);
+        int n1 = 0;
+        int n2 = 1;
+        int sum = 0;
+        System.out.print(n1+ " ");
+        System.out.print(n2+ " ");
+        System.out.println(n1+ "--"+n2);
+        p2Recursive(n1, n2, n, sum);
     }
 
     public static void p1Recursive(int n) {
