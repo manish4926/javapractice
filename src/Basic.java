@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Basic {
 
     public static void main(String[] args) {
+        Basic b = new Basic();
         //program1(); //Get Inputs from User and Print it
         //program2(); //fabonnici series
         //program3(); //Java Program to Check Even or Odd Number
@@ -13,8 +14,75 @@ public class Basic {
         //program8(); //Java Program to calculate compound interest
         //program9(); //Java Program to calculate simple interest
         //program10(); //Program to find Quotient and Remainder
-        program11(); // find the power of number
+        //program11(); // find the power of number
 
+        //b.program12();  //check prime number
+        //b.program13();  //check palindrome number
+
+        b.program14();
+    }
+
+
+    public void program14() {
+        //factorial of a number
+        //5!= 5 * 5 * 3 * 2 * 1;
+        int x = 5;
+        int res = 1;
+        while (x > 1) {
+            res *= x;
+            x--;
+        }
+        System.out.println(res);
+    }
+
+    public void program13() {
+        //Palindrome number
+        // 151, 121,  34543, 343, 171, 48984
+        int x = 34543;
+        int x1 = x;
+        int round = 1;
+        int  y = 0;
+        while (x > 0) {
+            int r = x%10;
+            x = x /10;
+            y = (y*round)+r;
+            round = 10;
+        }
+
+        if(x1 == y) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+    }
+
+    public void program12() {
+        //check prime number
+
+        int x = 5;
+        for (int i = 2; i < x; i++) {
+            boolean res = this.checkPrimeNumber(i);
+            if(res==true) {
+                System.out.println("Number "+i+" is " +  "prime");
+            } else {
+                System.out.println("Number "+i+" is " +  "not prime");
+            }
+
+
+        }
+    }
+
+    protected boolean checkPrimeNumber(int x) {
+        if(x == 0 || x ==1) {
+            return false;
+        } else {
+            for (int i = 2; i < x; i++) {
+                if(x%i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     public static void program11() {
