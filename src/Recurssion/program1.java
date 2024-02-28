@@ -69,14 +69,18 @@ public class program1 {
     }
 
     public static void p2Recursive(int n1, int n2, int n, int sum) {
-        if(n == n2) {
+        if(n == 0) {
+            sum  = n1 + n2;
             System.out.print(sum+" ");
             return;
         }
-        System.out.println(n1+ "--"+n2);
+        //System.out.println(n1+ "--"+n2);
         sum  = n1 + n2;
+        //System.out.println(n);
         System.out.print(sum+" ");
+        n--;
         p2Recursive(n2, sum, n, sum);
+
     }
 
     public static void p2() {
@@ -88,8 +92,7 @@ public class program1 {
         int sum = 0;
         System.out.print(n1+ " ");
         System.out.print(n2+ " ");
-        System.out.println(n1+ "--"+n2);
-        p2Recursive(n1, n2, n, sum);
+        p2Recursive(n1, n2, n-2, sum);
     }
 
     public static void p1Recursive(int n) {
