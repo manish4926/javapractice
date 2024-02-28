@@ -17,14 +17,43 @@ public class Basic {
         //program11(); // find the power of number
 
         //b.program12();  //check prime number
-        b.program13();  //check palindrome number
+        //b.program13();  //check palindrome number
 
+        b.program14();
+    }
+
+
+    public void program14() {
+        //factorial of a number
+        //5!= 5 * 5 * 3 * 2 * 1;
+        int x = 5;
+        int res = 1;
+        while (x > 1) {
+            res *= x;
+            x--;
+        }
+        System.out.println(res);
     }
 
     public void program13() {
         //Palindrome number
         // 151, 121,  34543, 343, 171, 48984
+        int x = 34543;
+        int x1 = x;
+        int round = 1;
+        int  y = 0;
+        while (x > 0) {
+            int r = x%10;
+            x = x /10;
+            y = (y*round)+r;
+            round = 10;
+        }
 
+        if(x1 == y) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
     }
 
     public void program12() {
@@ -41,8 +70,6 @@ public class Basic {
 
 
         }
-//        boolean res = this.checkPrimeNumber(x);
-//        System.out.println(res);
     }
 
     protected boolean checkPrimeNumber(int x) {
